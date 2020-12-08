@@ -15,6 +15,7 @@ public final class ConfigurationProperties {
     public static final String GROUP_MAP_PROPERTY = "GROUP_MAP";
     public static final String MIGRATE_UNMAPPED_ROLES_PROPERTY = "MIGRATE_UNMAPPED_ROLES";
     public static final String MIGRATE_UNMAPPED_GROUPS_PROPERTY = "MIGRATE_UNMAPPED_GROUPS";
+    public static final String UPDATE_PASSWORD_ACTION_PROPERTY = "UPDATE_PASSWORD_ACTION";
 
     private static final List<ProviderConfigProperty> PROPERTIES = List.of(
             new ProviderConfigProperty(URI_PROPERTY,
@@ -36,7 +37,11 @@ public final class ConfigurationProperties {
             new ProviderConfigProperty(MIGRATE_UNMAPPED_GROUPS_PROPERTY,
                     "Migrate unmapped groups",
                     "Whether or not to migrate groups not found in the field above",
-                    BOOLEAN_TYPE, true)
+                    BOOLEAN_TYPE, true),
+            new ProviderConfigProperty(UPDATE_PASSWORD_ACTION_PROPERTY,
+                    "Add update password action",
+                            "Whether or not to force users to update their password",
+                                       BOOLEAN_TYPE, true)
     );
 
     private ConfigurationProperties() {

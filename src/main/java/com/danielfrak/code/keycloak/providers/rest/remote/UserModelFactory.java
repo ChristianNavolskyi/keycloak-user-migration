@@ -74,6 +74,9 @@ public class UserModelFactory {
         userModel.setEmailVerified(legacyUser.isEmailVerified());
         userModel.setFirstName(legacyUser.getFirstName());
         userModel.setLastName(legacyUser.getLastName());
+        if (isParseEnabledFor(UPDATE_PASSWORD_ACTION_PROPERTY)) {
+            userModel.addRequiredAction(UserModel.RequiredAction.UPDATE_PASSWORD);
+        }
 
         if (legacyUser.getAttributes() != null) {
             legacyUser.getAttributes()
